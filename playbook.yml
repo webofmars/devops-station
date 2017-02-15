@@ -1,0 +1,62 @@
+- hosts: all
+  become: true
+  vars_files:
+    - vars/apt.yml
+    - vars/i18n.yml
+    - vars/ntp.yml
+    - vars/packages.yml
+    - vars/docker.yml
+    - vars/secrets.yml
+  vars:
+    - hostname_hostname: "devops-station"
+
+  pre_tasks:
+    - name: update the apt-cache
+      apt: update_cache="yes" cache_valid_time=3600
+
+  roles:
+    - role: Stouts.hostname
+      tags: [ "config", "system" ]
+
+    - role: pkorobeinikov.locale
+      tags: [ "config", "i18n" ]
+
+    - role: yatesr.timezone
+      tags: [ "config", "i18n" ]
+
+    - role: gantsign.keyboard
+      tags: [ "config", "i18n" ]
+
+    - role: bramford.apt-sources
+      tags: [ "config", "apt" ]
+
+    - role: geerlingguy.ntp
+      tags: [ "config", "ntp" ]
+
+    - role: webofmars.xfce4-desktop
+      tags: [ "setup", "xorg", "gdm", "xfce" ]
+
+    - role: GROG.package
+      tags: [ "setup", "packages" ]
+
+    - role: angstwad.docker_ubuntu
+      tags: [ "devops", "docker" ]
+
+    - role: ateoto.terraform
+      terraform_version: 0.8.6
+      tags: [ "devops", "terraform" ]    
+
+    - role: mivok0.users
+      tags: [ "setup", "users" ]
+      
+  tasks:
+    - name: install docker-py
+      pip: name="docker-py"
+      tags: ["initial-setup", "python"]
+    
+    - name: pull needed docker images
+      docker_image: name="{{ item }}"
+      with_items: "{{ docker_images }}"
+      tags: ["docker", "docker-images"]
+
+

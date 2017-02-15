@@ -1,0 +1,16 @@
+- package_list:
+  - name: lsof
+  - name: netcat
+  - name: tcpdump
+  - name: screen
+  - name: vim
+  - name: pv
+  - name: multitail
+  - name: whois
+  - name: git
+  - name: git-flow
+  - name: jq
+  - name: xfce4-whiskermenu-plugin
+  - name: virtualbox-guest-dkms
+  - name: virtualbox-guest-utils
+  - name: virtualbox-guest-x11

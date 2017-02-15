@@ -1,0 +1,7 @@
+pip_version_docker_compose: 1.9.0
+docker_group_members:
+  - root
+  - vagrant
+docker_images:
+  - busybox
+  - alpine

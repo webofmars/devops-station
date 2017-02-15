@@ -1,0 +1,14 @@
+- src: Stouts.hostname
+- src: pkorobeinikov.locale
+- src: yatesr.timezone
+- src: geerlingguy.ntp
+- src: gantsign.keyboard
+- src: bramford.apt-sources
+- src: webofmars.xfce4-desktop
+- src: GROG.package
+- src: angstwad.docker_ubuntu
+- src: mivok0.users
+
+# from GitHub, until merged upstream
+- src: https://github.com/webofmars/ansible-role-terraform
+  name: ateoto.terraform

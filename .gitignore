@@ -1,0 +1,4 @@
+/roles/**
+/vars/secrets.yml
+/.vagrant
+/TODO.lst

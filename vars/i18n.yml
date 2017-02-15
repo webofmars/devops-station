@@ -1,0 +1,21 @@
+# pkorobeinikov.locale settings
+- locale_names:
+    - fr_FR.UTF-8
+    - fr_FR
+    - en_US.UTF-8
+    - en_US
+
+# pkorobeinikov.locale settings
+- locale_env_vars:
+    - LC_ALL='fr_FR.UTF-8'
+    - LANG='fr_FR.UTF-8'
+
+# yatesr.timezone settings
+- timezone: "Europe/Paris"
+
+# gantsign.keyboard settings
+- keyboard_model: "pc105"
+- keyboard_layout: "fr"
+- keyboard_variant: ""
+- keyboard_options: "terminate:ctrl_alt_bksp"
+- keyboard_backspace: "guess"
